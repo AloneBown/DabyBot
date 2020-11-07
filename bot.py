@@ -43,8 +43,8 @@ async def say(ctx, arg: str):
 
 #Привет боту
 @bot.command()
-async def hello(ctx, member: discord.Member):
-    await ctx.send(f'Привет {member.mention}! Я рад тебя видеть!')
+async def hello(ctx):
+    await ctx.send('Привет! Я рад тебя видеть!')
 
 #Удар
 @bot.command()
