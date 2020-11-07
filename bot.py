@@ -120,6 +120,8 @@ async def unmute(ctx, member: discord.Member):
 
 @bot.command()
 async def help(ctx):
+    await ctx.channel.purge(limit = 1)
+    
     emb = discord.Embed(title = 'Навигация по командам', colour = discord.Colour.green())
     
     emb.set_author(name = bot.user.name, icon_url= bot.user.avatar_url)
