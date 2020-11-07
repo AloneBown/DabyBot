@@ -1,5 +1,5 @@
 #Дискорд Бот "DabiBot"
-#Версия: 1.0.0
+#Версия: 1.0.0.1
 #Автор: AloneBown#3518
 
 import discord
@@ -45,8 +45,8 @@ async def say(ctx, arg: str):
 
 #Привет боту
 @bot.command()
-async def hello(ctx):
-    await ctx.send('Привет! Я рад тебя видеть!')
+async def hello(ctx, member: discord.Member):
+    await ctx.send('Привет {member.mention}! Я рад тебя видеть!')
 
 #Удар
 @bot.command()
