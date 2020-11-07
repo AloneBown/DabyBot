@@ -25,6 +25,8 @@ async def on_message(message):
     
     if msg in bad_words:
         await message.delete()
+    if bad_words in msg:
+        await message.delete()
 
 #Пинг понг
 @bot.command()
