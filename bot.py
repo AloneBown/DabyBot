@@ -11,6 +11,7 @@ PREFIXx = '!'
 bot = commands.Bot(command_prefix=PREFIXx)
 bot.remove_command('help')
 bad_words = ['Ниггер','негр', 'нигга', 'уебан', 'уебище', 'гнида', 'гомик', 'педераст', 'пидор', 'хохол', 'кацап', 'хохланд','Блядь','Сука','блеадь','пидорас', 'чмо', 'долбоеб', 'хуй', 'нахуй','На хуй','придурок', 'конченый','Хер','Даун','Daun','Dayn','Fisting ass','Бич','Bitch','пентюх','Блат','Блэт']
+glory = ['Слава Арстоцке!']
 
 #Отчет о включении бота
 @bot.event
@@ -29,6 +30,8 @@ async def on_message(message):
     
     if msg in bad_words:
         await message.delete()
+    if msg in glory:
+        await bot.send_message(message.channel, "Glory to Arstozka!")
 
 #Пинг понг
 @bot.command()
