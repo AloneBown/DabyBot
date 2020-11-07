@@ -29,8 +29,6 @@ async def on_message(message):
     
     if msg in bad_words:
         await message.delete()
-    if bad_words in msg:
-        await message.delete()
 
 #Пинг понг
 @bot.command()
@@ -46,7 +44,7 @@ async def say(ctx, arg: str):
 #Привет боту
 @bot.command()
 async def hello(ctx, member: discord.Member):
-    await ctx.send('Привет {member.mention}! Я рад тебя видеть!')
+    await ctx.send('Привет {member.mention} ! Я рад тебя видеть!')
 
 #Удар
 @bot.command()
