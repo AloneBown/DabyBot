@@ -1,3 +1,7 @@
+#Дискорд Бот "DabiBot"
+#Версия: 1.0.0
+#Автор: AloneBown#3518
+
 import discord
 import typing
 from discord.ext import commands
