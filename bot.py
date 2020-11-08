@@ -31,7 +31,7 @@ async def on_message(message):
     if msg in bad_words:
         await message.delete()
     
-@client.event
+@bot.event
 async def on_reaction_add(reaction, user):
   ChID = '774997225167257642'
   if reaction.message.channel.id != ChID:
