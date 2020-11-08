@@ -1,5 +1,5 @@
 #Дискорд Бот "DabiBot"
-#Версия: 1.0.0.1
+#Версия: 1.0.1
 #Автор: AloneBown#3518
 
 import discord
@@ -36,7 +36,7 @@ async def on_message(message):
 #Пинг понг
 @bot.command()
 async def ping(ctx):
-    await ctx.send('pong')
+    await ctx.send('pong!')
 
 #Сказать что то через бота
 @bot.command()
@@ -143,7 +143,17 @@ async def help(ctx):
     
     await ctx.send (embed = emb)
 
+@bot.command()
+async def help_ping(ctx):
+    await ctx.channel.purge(limit=1)
+    
+    emb = discord.Embed(title = 'Помощь по команде: ping', colour=discord.Colour.green())
 
+    emb.set_author(name = bot.user.name, icon_url= bot.user.avatar_url)
+    emb.add_field( name = '{}ping'.format(PREFIXx), value = 'Pong!')
+    emb.add_field(name='Назначение', value = 'Самая простая развлекательная команда')
+    
+    await ctx.send(embed=emb)
 #-----------------------------------------------------ВЫДАЧА ОШИБОК-------------------------------------------------------#
 @clear.error
 async def clear_error(ctx, error):
