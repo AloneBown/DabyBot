@@ -30,9 +30,16 @@ async def on_message(message):
     
     if msg in bad_words:
         await message.delete()
-    if msg in glory:
-        await bot.send_message(message.channel, "Glory to Arstozka!")
-
+    
+@bot.event()  
+#@commands.Cog.listener()
+async def on_raw_reaction_add(payload: RawReactionActionEvent):
+    if not payload.message_id == 774998564678008832:  # ID сообщения на которое нужно ставить реакции
+        return
+    if not payload.emoji.name == "1️⃣":  # или payload.emoji.name == "✔" для unicode-эмодзей
+        return
+    if member := payload.member:
+        await member.add_roles(member.guild.get_role(775013337548587008))
 #Пинг понг
 @bot.command()
 async def ping(ctx):
