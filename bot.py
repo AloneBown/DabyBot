@@ -38,7 +38,7 @@ async def on_raw_reaction_add(payload: RawReactionActionEvent):
         return
     if not payload.emoji.name == "1️⃣":  # или payload.emoji.name == "✔" для unicode-эмодзей
         return
-    if member = payload.member:
+    if member : payload.member:
         await member.add_roles(member.guild.get_role(775013337548587008))
 #Пинг понг
 @bot.command()
