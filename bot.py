@@ -154,6 +154,19 @@ async def help_ping(ctx):
     emb.add_field(name='Назначение', value = 'Самая простая развлекательная команда')
     
     await ctx.send(embed=emb)
+
+@bot.command()
+async def help_ping(ctx):
+    await ctx.channel.purge(limit=1)
+    
+    emb = discord.Embed(title = 'Помощь по команде: ping', colour=discord.Colour.green())
+
+    emb.set_author(name = bot.user.name, icon_url= bot.user.avatar_url)
+    emb.add_field( name = 'Команда'.format(PREFIXx), value = '{}say')
+    emb.add_field(name='Назначение', value = 'Сказать что-то через бота')
+    emb.add_field(name='Пример', value = '!say "Random text"')
+    
+    await ctx.send(embed=emb)
 #-----------------------------------------------------ВЫДАЧА ОШИБОК-------------------------------------------------------#
 @clear.error
 async def clear_error(ctx, error):
