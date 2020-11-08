@@ -50,10 +50,10 @@ async def hello(ctx):
     await ctx.send('Привет! Я рад тебя видеть!')
 
 #Удар
-@bot.command()
-async def slap(ctx, members: commands.Greedy[discord.Member], *, reason='без причины'):
-    slapped = ", ".join(x.name for x in members)
-    await ctx.send('{} ударил, потому что {}'.format(slapped, reason))
+#@bot.command()
+#async def slap(ctx, members: commands.Greedy[discord.Member], *, reason='без причины'):
+#    slapped = ", ".join(x.name for x in members)
+#    await ctx.send('{} ударил, потому что {}'.format(slapped, reason))
 
 #Чистка
 @bot.command()
@@ -133,7 +133,7 @@ async def help(ctx):
     emb.add_field( name = '{}say'.format(PREFIXx), value = 'Сказать что-то с помощью бота, писать с " "')
     emb.add_field( name = '{}ping'.format(PREFIXx), value = 'Pong!')
     emb.add_field( name = '{}hello'.format(PREFIXx), value = 'Сказать привет боту')
-    emb.add_field( name = '{}slap'.format(PREFIXx), value = 'Ударить кого-то')
+    emb.add_field( name = '{}slap'.format(PREFIXx), value = 'Ударить кого-то (Отключена)')
     emb.add_field( name = '{}clear'.format(PREFIXx), value = 'Очистка чата (только модеры)')
     emb.add_field( name = '{}kick'.format(PREFIXx), value = 'Кикнуть пользователя с сервера (только админы)')
     emb.add_field( name = '{}ban'.format(PREFIXx), value = 'Забанить пользователя на сервере (только админы)')
@@ -156,7 +156,7 @@ async def help_ping(ctx):
     await ctx.send(embed=emb)
 
 @bot.command()
-async def help_ping(ctx):
+async def help_say(ctx):
     await ctx.channel.purge(limit=1)
     
     emb = discord.Embed(title = 'Помощь по команде: ping', colour=discord.Colour.green())
