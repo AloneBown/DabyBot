@@ -31,7 +31,7 @@ async def on_message(message):
     if msg in bad_words:
         await message.delete()
         return
-    if msg in glory
+    if msg in glory:
         await message.add_message('Glory toArstozka')
     
 @bot.event
