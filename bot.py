@@ -130,7 +130,7 @@ async def unmute(ctx, member: discord.Member):
     await member.remove_roles(mute_role)
     await ctx.send(f'Пользователь {member.mention} был размьючен')
     
-@commands.command() # начало команды
+@bot.command() # начало команды
 @commands.has_permissions(administrator = True) # нужны права администратора? - да
 async def ar(ctx, autoroles): #сама команда и что ей надо указать, это prefix, комаду и НАЗВАНИЕ роли.
     for guild in self.bot.guilds: # оно ищет на сервере людей
