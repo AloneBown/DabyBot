@@ -130,15 +130,15 @@ async def unmute(ctx, member: discord.Member):
     await member.remove_roles(mute_role)
     await ctx.send(f'Пользователь {member.mention} был размьючен')
     
-@bot.command()
-@commands.has_permissions(manage_roles = True)
-async def crb(ctx, member: discord.Member):
-    await ctx.channel.purge(limit = 1)
-
-    crb_role = discord.utils.get(ctx.message.guild.roles, name = 'CRB')
-
-    await member.add_roles(crb_role)
-    await ctx.send(f'ВЫПОЛЕНО')
+@commands.command() # начало команды
+@commands.has_permissions(administrator = True) # нужны права администратора? - да
+async def ar(ctx, autoroles): #сама команда и что ей надо указать, это prefix, комаду и НАЗВАНИЕ роли.
+    for guild in self.bot.guilds: # оно ищет на сервере людей
+      for member in guild.members: # и тут делается все работа для member-a
+        autoroles2 = discord.utils.get(ctx.message.guild.roles, name = CRB) # нахождение айди по названию, иначе будет ошибка(у меня)
+        await member.add_roles(autoroles2) # само добавление роли
+    emb = discord.Embed(description = 'Роли успешно добавлены ВСЕМ участникам Discord сервера.')
+    await ctx.send(embed = emb) # теперь бот сообщает что всё вышло.
 
 #------------------------------------------------КОМАНДА HELP---------------------------------------------------#
 
