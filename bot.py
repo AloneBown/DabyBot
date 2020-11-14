@@ -135,7 +135,7 @@ async def unmute(ctx, member: discord.Member):
 async def crb(ctx, member: discord.Member):
     await ctx.channel.purge(limit = 1)
 
-    сrb_role = discord.utils.get(ctx.message.guild.roles, name = 'Крабан')
+    crb_role = discord.utils.get(ctx.message.guild.roles, name = 'CRB')
 
     await member.add_roles(crb_role)
     await ctx.send(f'ВЫПОЛЕНО')
