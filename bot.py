@@ -132,7 +132,7 @@ async def unmute(ctx, member: discord.Member):
     
 @commands.command() # начало команды
 @commands.has_permissions(administrator = True) # нужны права администратора? - да
-async def crb(ctx, member: discord.Member):
+async def crb(ctx):
     await ctx.channel.purge(limit = 1)
     for guild in bot.guilds: # оно ищет на сервере людей
         for member in guild.members: # и тут делается все работа для member-a
