@@ -223,4 +223,4 @@ async def unmute_eror(ctx, error):
 
 
 
-bot.run('NTczODk4NzMwMDIxOTc4MTEz.XMxi1w.InVKh92Y0ozWCQoDydHBr-3V9gs')
+bot.run('p6GF1QDuQkyOECm1mTFqq23eFnJlwJFl')
