@@ -1,5 +1,5 @@
 #Дискорд Бот "DabiBot"
-#Версия: 1.0.1.1
+#Версия: 1.0.1.2
 #Автор: AloneBown#3518
 
 import discord
@@ -223,4 +223,4 @@ async def unmute_eror(ctx, error):
 
 
 
-bot.run('NTczODk4NzMwMDIxOTc4MTEz.XMxi1w.T-feIPgp9qjQew2t8f3KuxiJWwk')
+bot.run('NTczODk4NzMwMDIxOTc4MTEz.XMxi1w.InVKh92Y0ozWCQoDydHBr-3V9gs')
